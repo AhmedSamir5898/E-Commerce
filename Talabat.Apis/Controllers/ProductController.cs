@@ -16,17 +16,17 @@ namespace Talabat.Apis.Controllers
         private readonly IGenericRepository<Product> _productRepo;
         private readonly IGenericRepository<ProductBrand> _brandRepo;
         private readonly IGenericRepository<ProductCategory> _categoriesRepo;
-        private readonly ApiService _apiService;
+        
         private readonly IMapper _mapper;
 
         public ProductController(IGenericRepository<Product> ProductRepo ,
             IGenericRepository<ProductBrand> brandRepo,
-            IGenericRepository<ProductCategory> categoriesRepo,ApiService apiService, IMapper mapper)
+            IGenericRepository<ProductCategory> categoriesRepo, IMapper mapper)
         {
             _productRepo = ProductRepo;
             _brandRepo = brandRepo;
             _categoriesRepo = categoriesRepo;
-            _apiService = apiService;
+          
             _mapper = mapper;
         }
 

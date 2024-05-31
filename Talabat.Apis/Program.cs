@@ -15,7 +15,7 @@ using Talabat.Repository.Identity;
 using Microsoft.ML.Data;
 using Microsoft.Extensions;
 using Microsoft.Extensions.ML;
-using Talabat.Services.AI;
+
 
 namespace Talabat.Apis
 {
@@ -44,9 +44,7 @@ namespace Talabat.Apis
 
             }).AddEntityFrameworkStores<AppIdentityDbContext>(); ;
             builder.Services.AddApplicationServices();
-            builder.Services.AddPredictionEnginePool<ModelInput, ModelOutput>()
-    .FromFile(modelName: "SentimentAnalysisModel", filePath: "sentiment_model.zip", watchForChanges: true);
-
+         
             builder.Services.AddSingleton<IConnectionMultiplexer>(options =>
             {
                 var Connection = builder.Configuration.GetConnectionString("Redis");
